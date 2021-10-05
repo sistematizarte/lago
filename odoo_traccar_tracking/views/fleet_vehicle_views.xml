@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <record id="inherit_traccar_fleet_vehicle_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.view.inherit</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <button name="open_assignation_logs" position="before">
+                <field name="is_traccar" invisible="1"/>
+                <button name="set_traccar"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-map-marker text-white" attrs="{'invisible': [('is_traccar', '=', False)]}" style="background-color:#28a745!important;color:white;">
+                    Traccar
+                </button>
+                <button name="unset_traccar"
+                    type="object"
+                    class="oe_stat_button btn-danger"
+                    icon="fa-map-marker text-white" attrs="{'invisible': [('is_traccar', '=', True)]}" style="background-color:#dc3545!important;color:white;">Traccar
+                </button>
+                <button name="open_vehicle_tracking_history"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-taxi text-white" attrs="{'invisible': [('is_traccar', '=', False)]}" style="background-color:#132637!important;color:white;">
+                    <field name="trip_history_count" widget="statinfo" string="Trip History"/>
+                </button>
+            </button>
+            <xpath expr="//group" position="after">
+                <group col="2" string="Traccar" attrs="{'invisible': [('is_traccar', '=', False)]}">
+                    <group>
+                        <field name="traccer_device_id"/>
+                        <field name="is_online" readonly="1"/>
+                        <field name="device_record_id" readonly="1"/>
+                    </group>
+                    <group>
+                        <button name="validate_device" string=" Create &amp; Validate Vehicle" type="object" class="btn-success" icon="fa-car" attrs="{'invisible': [('traccer_device_id', 'in', ['', False])]}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_traccar_fleet_vehicle_view_kanban" model="ir.ui.view">
+        <field name="name">fleet.vehicle.kanban.view.inherit</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_kanban"/>
+        <field name="arch" type="xml">
+
+            <field name="contract_count" position="after">
+                <field name="is_online"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="inside">
+                <div class="float-right">
+                    <t t-if="record.is_online.raw_value == 'online'">
+                        <span class="fa fa-circle text-success" role="img" aria-label="Online" title="Online" name="is_online"/>
+                    </t>
+                    <t t-else="">
+                        <span class="fa fa-circle text-danger" role="img" aria-label="Offline" title="Offline" name="is_online"/>
+                    </t>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

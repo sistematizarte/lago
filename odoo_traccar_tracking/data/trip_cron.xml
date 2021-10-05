@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data noupdate="1">
+		<record id="cron_import_traccar_travelling" forcecreate="True" model="ir.cron">
+			<field name="name">Import - Traccar Travelling Details</field>
+			<field name="active" eval="False"/>
+			<field name="user_id" ref="base.user_root"/>
+			<field name="interval_number">4</field>
+			<field name="interval_type">minutes</field>
+			<field name="numbercall">-1</field>
+			<field name="model_id" ref="model_trip_details"/>
+			<field name="state">code</field>
+			<field name="code">model.cron_import_trip_details()</field>
+		</record>
+    </data>
+</odoo>

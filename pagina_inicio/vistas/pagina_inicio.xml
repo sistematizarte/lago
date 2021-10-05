@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!-- Comentario en la Views -->
+
+	<record model="ir.ui.view" id="pagina_inicio_form_view">
+		<field name='name'>pagina.inicio.form</field>
+		<field name='model'>pagina.inicio</field>
+		<field name='arch' type='xml'>
+			<form string="Pagina de Inicio">
+				<sheet>
+              <group >
+                <field name="cuadro_1" style="width:1140px;" nolabel="1" widget="html"/>
+              </group>
+
+				</sheet>
+			</form>
+		</field>  
+	</record>
+
+	<record model="ir.actions.act_window" id="action_view_pagina_inicio">
+		<field name="name">Pagina de Inicio de la Nave</field>
+		<field name="res_model">pagina.inicio</field>
+		<field name="view_mode">form</field>
+		<field name="target">inline</field>
+	</record> 
+
+<menuitem id="menu_pagina_inicio" name="Pagina Inicio" action="action_view_pagina_inicio" sequence="0"/>
+
+
+
+</odoo>

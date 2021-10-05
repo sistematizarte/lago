@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+,,,,,,,
+trip_details_access_user,Trip Details User,model_trip_details,fleet.fleet_group_user,1,0,0,0
+traccar_configure_access_user,Traccar Configure User,model_traccar_configure,fleet.fleet_group_user,1,0,0,0
+tracking_history_wizard_access_user,Traccar History Wizard User,model_tracking_history_wizard,fleet.fleet_group_user,1,0,0,0
+
+,,,,,,,
+trip_details_access_manager,Trip Details Manager,model_trip_details,fleet.fleet_group_manager,1,1,1,1
+traccar_configure_access_manager,Traccar Configure Manager,model_traccar_configure,fleet.fleet_group_manager,1,1,1,1
+tracking_history_wizard_access_manager,Traccar History Wizard Manager,model_tracking_history_wizard,fleet.fleet_group_manager,1,1,1,1

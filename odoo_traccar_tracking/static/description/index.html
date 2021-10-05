@@ -1,0 +1,507 @@
+<!-- Copyright (c) 2020-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<section class="oe_spaced mw-100 d-flex flex-column" id="wk_header">
+	<h2 class="display-4 text-center font-weight-bold mt-3 mb-2">
+		Odoo Fleet Traccar Tracking
+	</h2>
+	<span class="text-center font-italic my-2">
+		"Track your vehicles with Traccar in Odoo Fleet!"
+	</span>
+
+	<div class="row mt16 mb16 py-2 m-1" style="font-weight:500; font-size:calc(0.7rem + 0.4vw); color:#484848;">
+		  <div class="card container p-3 text-justify col-md-6 border-right" style="font-weight:500;line-height: 24px;font-size:calc(0.7rem + 0.4vw);color:#484848;vertical-align: middle; display: grid;">
+				<p class="mb4 mt4 mr8">
+					Odoo Fleet Traccar Tracking module facilitates you to track the vehicle movements of all your drivers via traccar mobile app. Moreover, the module facilitates you to manage tracking data and report it via Odoo.
+				</p>
+		  </div>
+		  <div class="card container p-3 text-justify col-md-6">
+				<h4 class="ml-md-3">Information</h4>
+				<div class="mt-2 ml-md-3" style="display:flex">
+					  <span class="ml-1 mr-2 my-auto"><img src="https://apps.odoocdn.com/apps/assets/13.0/odoo_marketplace/icon-user-guide.png" alt="user-guide"></span>
+					  <div class="font-weight-bold" style="line-height: 26px;" class="mt-2">
+					  User Guide
+					  </div>
+				</div>
+				<div class="ml-md-3" style="display:flex;">
+					<span style="margin-top:0.2rem">https://webkul.com/blog/odoo-fleet-traccar-tracking</span>
+				</div>
+		  </div>
+	</div>
+
+	<div class="container p-3 shadow text-justify" style="
+			background: #FFFFFF;
+			border-radius: 2px;
+			margin-bottom: 0px !important;
+			font-size: calc(0.7rem + 0.4vw);
+		">
+		<span class="font-weight-bold mt-3">
+			Transportation is one of profitable businesses leading the market; however, you need to look into each part to run the business flawlessly. Whether you are running cab services or moving freight; the most important part is tracking the vehicles as you have the responsibility of the people in the cabs and goods in the freight.
+		</span>
+		<p class="mt-3">
+			Traccar is the best solution for tracking your fleet efficiently. It is open source and also lets you keep track of the details of your vehicle with zero possibilities of failure.
+		</p>
+		<p class="mt-3">
+			On the other hand, Odoo which is one of the topmost backend management software has offered a fleet module for the ease of the users. Odoo fleet lets the users to track as well as manage the data related to the vehicle(s).
+		</p>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<img src="img/traccaricon.png" alt="import">
+		<h3 class="ml-4 align-self-center" style="font-size: calc(0.7rem + 1.0vw);">
+			Odoo Traccar Fleet Tracking Integration!
+		</h3>
+	</div>
+	<div class="mt-2">
+		<p style="font-size: calc(0.75rem + 0.4vw);">
+			Integrating traccar app with Odoo fleet so that you can easily manage the tracking of your vehicles from a single software. It facilitates you to audit the movements of the vehicles; moreover, you can also check the travel history for a particular custom time period.
+		</p>
+		<span>
+			<img class="img-thumbnail mt" src="img/traccarbannar.png" alt="traccar_bannar">
+		</span>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100 card p-4">
+	<div class="row p-2 text-justify" style="font-size: calc(0.75rem + 0.4vw);">
+		<div class="mt-2 mw-100">
+			<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+				Prerequisites
+			</h4>
+			<ul class="mx-auto w-100" style="list-style-type:list;font-size: calc(0.75rem + 0.4vw);">
+				<li> Admin needs to download traccar web client as per his/her operating system; the link to download the app is
+				<br/>
+				<span class="font-weight-bold text-primary" data-toggle="tooltip" data-html="true" title="https://www.traccar.org/download/">https://www.traccar.org/download/.</span>
+				</li>
+				<li>
+					Driver needs to install Traccar Client App for iOS and Android
+					<br/>
+					Link to install the app for iOS:
+					<br/>
+					<span class="font-weight-bold text-primary" data-toggle="tooltip" data-html="true" title="https://apps.apple.com/us/app/traccar-client/id843156974#?platform=iphone">https://apps.apple.com/us/app/traccar-client/id843156974#?platform=iphone</span>
+					<br/>
+					Link to install the app for android:
+					<br/>
+					<span class="font-weight-bold text-primary" data-toggle="tooltip" data-html="true" title="https://play.google.com/store/apps/details?id=org.traccar.client">https://play.google.com/store/apps/details?id=org.traccar.client</span>
+				</li>
+				<li>Support Openstreet Map</li>
+				<li> (Required for google map only) You require Google Map API which you can create API key with the help of this link <br/>(<span class="font-weight-bold text-primary" data-toggle="tooltip" data-html="true" title="https://console.cloud.google.com/apis/credentials">https://console.cloud.google.com/apis/credentials</span>) </li>
+					After creating API key, you need to enable below mentioned APIs:
+					<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+						<li class="font-weight-bold">Geocoding API</li>
+						<li class="font-weight-bold">Maps JavaScript API</li>
+						<li class="font-weight-bold">Maps Static API</li>
+					</ul>
+					Please go through the link mentioned here
+					<br/>
+					(<span class="font-weight-bold text-primary" data-toggle="tooltip" data-html="true" title="https://developers.google.com/maps/documentation/directions/usage-and-billing">https://developers.google.com/maps/documentation/directions/usage-and-billing</span>)
+					<br/>
+					For the directions API Usage and billing.
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<h3 class="ml-4 align-self-center" style="font-size: calc(0.7rem + 1.0vw);">
+			Live Track your Vehicles from Odoo via Traccar
+		</h3>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-8 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 p-3" style="min-height:100px">
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					Odoo Fleet Traccar Tracking allows you to track the movement of the vehicles anytime. Hence, you know the current situation of your vehicle which means whether the vehicle is running or not.
+				</p>
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					Now, you don't need to worry about your vehicle as you can track each detail like movements in meters; even the battery percentage of the driver's cellphone.
+				</p>
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					Moreover, you can also check the accuracy of the vehicles; you can set the accuracy limit from your traccar application.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-12 pt-2 pt-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:100px">
+				<span>
+					<img class="img-responsive mt pl-4 pt-4" src="img/illustration.png" alt="Traccar">
+				</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<h3 class="ml-4 align-self-center" style="font-size: calc(0.7rem + 1.0vw);">
+			Check All your Online Vehicles Easily
+		</h3>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-4 col-sm-12 pt-2 pt-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:100px">
+				<span>
+					<img class="img-responsive mt pl-4 pt-4" src="img/illustration-2.png" alt="Traccar Vehicle">
+				</span>
+			</div>
+		</div>
+		<div class="col-md-8 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 p-3" style="min-height:100px">
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					Checking whether your drivers are online or offline can help you to know everything that is going on the rides. Hence, whenever a driver is on a ride then the status should be online.
+				</p>
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					The module helps you to differentiate the status of vehicles by its color; green color means that vehicle is online and red color means that vehicle is offline.
+				</p>
+				<p style="font-size: calc(0.75rem + 0.4vw);">
+					Moreover, you can also check whether the driver is moving from his/her location or not.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100">
+	<h3 class="font-weight" style="font-size: calc(1.2rem + 0.55vw);font-weight: 100;">
+		Key Features
+	</h3>
+	<span class="mb-2" style="font-size: calc(0.9rem + 0.2vw);">
+		Below is the detailed list of features for Odoo Fleet Traccar Tracking module
+	</span>
+	<div class="row no-gutters mw-100 py-2 pt-4">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Integrate Traccar Mobile App to Odoo
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>Now, you integrate your Traccar iOS and Android app with Odoo.</li>
+					<li>Make successful connections via traccar credentials in Odoo end.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Associate vehicles with traccar device id
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can create as many vehicles you want in Odoo</li>
+					<li>Associate newly created or old one to the traccar device id</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Track all Associated Vehicles from Odoo
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can live track the location of the vehicles individually</li>
+					<li>Or, you can also track the location of multiple vehicles together in a map</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					View the Trip history of any vehicle
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can check the tracking history of any vehicle for every 5 minute</li>
+					<li>Also, check the trip history of a particular vehicle on the basis of time duration
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Map Integration
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>The module is fully integrated with google map and openstreet map</li>
+					<li>Hence, the map view used is google map or openstreet map</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Check the Drivers' detailed information
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You check the battery percentage of the driver's cellphone</li>
+					<li>Also, check the accuracy of the current location</li>
+					<li>You can also check the speed of the vehicle</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Configure Live Tracking as you want
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>Live Tracking via scheduler in every 2 mins is available by default</li>
+					<li>Or, change the scheduler time as you require</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Configure Tracking Feature for Drivers' Mobile Device
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can easily configure tracking feature in any iOS or android app</li>
+					<li>Enable/disable tracking feature for any particular device</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Easily Import vehicle trip History
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can manually Import vehicle trip history for particular time duration</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100 shadow" style="min-height:100px;">
+				<h4 class="pl-4" style="font-size: calc(0.82rem + 0.45vw);">
+					Check the total Trips of a Vehicle
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square;font-size: calc(0.75rem + 0.4vw);">
+					<li>You can check the count of the total trips of any vehicle</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100 card">
+	<div  class="shadow" style="background-color: #eee;z-index: 20;position: sticky;top: 44px;cursor: pointer;">
+		<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist"
+			style="background-color: transparent;">
+			<li class="nav-item border-left" style="color: white;background-color:#333366;">
+				<span class="nav-link font-weight-bold active" id="traccar-tab" data-toggle="tab"
+					style="padding: 7px 20px;" href="#traccar-tab-content"
+					role="tab" aria-controls="traccar" aria-selected="true">
+					Odoo Traccar
+				</span>
+			</li>
+			<li class="nav-item border-left" style="color: white;background-color:#333366;">
+				<span class="nav-link font-weight-bold" id="dashboard-tab" data-toggle="tab"
+					style="padding: 7px 20px;" href="#odoo-tab-content" role="tab"
+					aria-controls="dashboard" aria-selected="true">
+					Configuration
+				</span>
+			</li>
+			<li class="nav-item border-left" style="color: white;background-color:#333366;">
+				<span class="nav-link font-weight-bold" id="backend-tab" data-toggle="tab"
+					style="padding: 7px 20px;" href="#mobile-tab-content" role="tab"
+					aria-controls="backend" aria-selected="false">
+					Mobile/Server Client
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div class="card-body tab-content p-0 mb-2">
+		<div class="tab-pane fade show active" id="traccar-tab-content" role="tabpanel" aria-labelledby="traccar-tab">
+			<div class="card p-2">
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Trip History
+				</h3>
+				<div class="card-body p-3 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/vehicle-history-popup.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/vehicle-history-popup.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-3 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/vehicle-trip-history.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/vehicle-trip-history.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Trip Step By Step History
+				</h3>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/trip-details.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/trip-details.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/trip-map-details.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/trip-map-details.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Driver Status/Location
+				</h3>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/driver-status.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/driver-status.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/driver-location.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/driver-location.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="odoo-tab-content" role="tabpanel" aria-labelledby="odoo-tab">
+			<div class="card p-2">
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Traccar Configurations
+				</h3>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Configure the instances
+				</div>
+				<div class="card-body p-3 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/traccar-configuration.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/traccar-configuration.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Prepare the traccar vehicle
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/traccaroffline.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/traccaroffline.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/vehicleonline.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/vehicleonline.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/vehicles.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/vehicles.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Select Map Provider (Google Map/Openstreet Map)
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/googlemap.png" target="_blank">
+						<img class="oe_picture" src="img.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Eneter Google Map Api key if selected.
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/googlemap.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/googlemap.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Scheduler Setup
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/cron.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/cron.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-header" style="line-height:25px;font-size: 120%;">
+					Import Trip History
+				</div>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/Odoo/vehicle-tracking-history.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Odoo/vehicle-tracking-history.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="mobile-tab-content" role="tabpanel" aria-labelledby="mobile-tab">
+			<div class="card p-2">
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Traccar Server
+				</h3>
+				<div class="card-body p-0 mb-2 oe_spaced" style="border: 1px solid lightgrey;">
+					<a class="oe_pic_ctr" href="screenshots/Traccar/createdevice.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Traccar/createdevice.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<div class="card-body p-0 mb-2 oe_spaced" style="border: 1px solid lightgrey;">
+					<a class="oe_pic_ctr" href="screenshots/Traccar/traccarreport.png" target="_blank">
+						<img class="oe_picture" src="screenshots/Traccar/traccarreport.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+				<h3 class="card-header my-0 shadow" style="font-size: calc(0.82rem + 0.55vw);">
+					Mobile Client
+				</h3>
+				<div class="card-body p-0 mb-2 shadow">
+					<a class="oe_pic_ctr" href="screenshots/MobileApp/android.png" target="_blank">
+						<img class="oe_picture" src="screenshots/MobileApp/android.png" alt="screenshot" style="padding: 10px;">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="pt32" id="webkul_support">
+	<div class="row">
+		<div class="col-12">
+			<h2 class="text-center">Help and Support</h2>
+			<p class="mb-2 text-center" style="font-size:0.9375rem; color:#333; font-weight:400">Get Immediate support for any of your query</p>
+		</div>
+		<div class="col-12">
+			<p class="text-center px-5 font-weight-normal" style="font-size:0.9375rem; color:#555;">You will get 90 days free support for any doubt, queries, and bug fixing (excluding data recovery) or any type of issue related to this module.</p>
+		</div>
+		<div class="mx-auto col-lg-9 mb-4 oe_screenshot">
+			<div class="row align-items-center justify-content-center mx-0 p-3">
+				<div class="col-sm-2 text-center pr-0">
+					<img src="//apps.odoocdn.com/apps/assets/13.0/rma/mail.png" alt="mail" class="img img-fluid">
+				</div>
+				<div class="col-xl-7 col-sm-10">
+					<p class="my-2 font-weight-bold" style="color:#555;">Write a mail to us:</p>
+					<b class="text-primary" style="font-size:calc(0.75rem + 0.4vw)">support@webkul.com</b>
+					<p class="my-2 font-weight-normal" style="font-size:0.8375rem; color:#777;">Any queries or want any extra features? Just drop a mail to our support.</p>
+				</div>
+				<div class="col-xl-3 offset-xl-0 float-xl-right col-sm-10 offset-sm-2 float-left mt16">
+					<a href="mailto:support@webkul.com" style="padding:10px 22px; background-color:#2335D7; font-size:0.8375rem; color:#fff"><i class="fa fa-pencil-square-o" style="color:white; margin-right:4px"></i>Write To US</a>
+				</div>
+			</div>
+		</div>
+		<div class="mx-auto col-lg-9 oe_screenshot">
+			<div class="row align-items-center justify-content-center mx-0 p-3">
+				<div class="col-sm-2 text-center pr-0">
+					<img src="//apps.odoocdn.com/apps/assets/13.0/rma/support-icon.png" alt="support-icon" class="img img-fluid">
+				</div>
+				<div class="col-sm-10 ">
+					<p class="my-2 font-weight-bold" style="color:#555">Get in touch with our Expert:</p>
+					<b class="text-primary text-break" style="font-size:calc(0.75rem + 0.4vw)">https://webkul.uvdesk.com/en/customer/create-ticket/</b>
+					<p class="my-2 font-weight-normal" style="font-size:0.8375rem; color:#777">Have any technical queries, want extra features, or anything else? Our team is here to answer all your questions. Just Raise A Support Ticket.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="oe_container lead">
+	<div>
+		<!-- Piwik Image Tracker-->
+		<img alt="" style="border:0"
+			src="http://odooimg.webkul.com/analytics/piwik/piwik.php?idsite=3&amp;rec=1&amp;action_name=ODOO-FLEET-TRACCAR-TRACKING&amp;url=https://apps.odoo.com/apps/modules/14.0/odoo_traccar_tracking&amp;uid=odoo_traccar_tracking" />
+		<!-- End Piwik -->
+	</div>
+</section>

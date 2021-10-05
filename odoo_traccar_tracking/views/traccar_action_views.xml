@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+
+    <record id="traccar_driver_status_action" model="ir.actions.act_window">
+        <field name="name">Driver Status</field>
+        <field name="res_model">tracking.history.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="odoo_traccar_tracking.tracking_vehicle_location_wizard_form"/>
+        <field name="target">new</field>
+      </record>
+
+    <record id="trip_details_action" model="ir.actions.act_window">
+        <field name="name">Trip Details</field>
+        <field name="res_model">trip.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="odoo_traccar_tracking.trip_details_search"/>
+        <field name="view_id" ref="odoo_traccar_tracking.trip_details_tree"/>
+    </record>
+
+    <record id="traccar_instance_tree_action" model="ir.actions.act_window">
+        <field name="name">Traccar Configuration</field>
+        <field name="res_model">traccar.configure</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create oe_link">
+                Click to define a new Traccar connection.
+            </p>
+        </field>
+        <field name="view_id" ref="odoo_traccar_tracking.traccar_instance_tree"/>
+        <field name="search_view_id" ref = "odoo_traccar_tracking.traccar_instance_search"/>
+    </record>
+
+    <record id='traccar_fleet_vehicle_action' model='ir.actions.act_window'>
+        <field name="name">Traccar Vehicles</field>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="context">{'search_default_groupby_status': 1}</field>
+        <field name="domain">[('is_traccar', '=', True)]</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new vehicle
+          </p><p>
+            Manage your fleet by keeping track of the contracts, services, odometers and fuel logs associated to each vehicle.
+          </p>
+        </field>
+    </record>
+
+</odoo>

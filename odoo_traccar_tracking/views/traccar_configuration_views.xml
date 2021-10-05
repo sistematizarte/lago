@@ -1,0 +1,117 @@
+
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <!-- Traccar Instance Configuration -->
+    <record id="traccar_instance_form" model="ir.ui.view">
+        <field name="name">traccar.configure.form</field>
+        <field name="model">traccar.configure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Connection Instance">
+                <header>
+                    <button name="test_connection"
+                        type='object' 
+                        icon="fa-pencil-square-o" 
+                        class="oe_highlight o_wow btn-dark" 
+                        string='Test Connection'/>
+                    <button name="fetch_trips"
+                        type='object' 
+                        icon="fa-car" 
+                        class="oe_highlight o_wow btn-success" 
+                        string=' Fetch Trip Data'/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
+                            <field name="active" widget="boolean_button" options='{"terminology": "active"}'/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" text="Connected"
+                        attrs="{'invisible': [('connection_status','!=', True)]}"/>
+                    <widget name="web_ribbon" text="Not Connected" bg_color="bg-danger"
+                        attrs="{'invisible': ['|',('connection_status','!=', False),('status','==', '')]}"/>
+                    <field name="connection_status" invisible="True"/>
+                    <div class="badge badge-success" attrs="{'invisible': [('connection_status','!=', True)]}">
+                        success
+                    </div>
+                    <div class="badge badge-danger"
+                        attrs="{'invisible': ['|',('connection_status','!=', False),('status','==', '')]}">
+                        error
+                    </div>
+
+                    <h3><field name="status"/></h3>
+                    <div class="oe_horizontal_separator oe_clear ">
+                        <separator string="Traccar API Settings"/>
+                    </div>
+                    <group>
+                        <label for="name"/>
+                        <b class="o_form_required"><field name="name" colspan="4" placeholder="Example: http://myecomm.com"/></b>
+                    </group>
+                    <notebook>
+                        <page string="API Credentials">
+                            <h2 style="margin-top: 10px !important;background-color: #e9ecef;padding-left: 8px;">
+                                API Credentials
+                            </h2>
+                            <div id="api_reference">
+                            </div>
+                            <div class="row mt16 o_settings_container">
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label string="User Name" for="user"/>
+                                        <div>
+                                                <field name="user" placeholder="Example: apiuser"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label string="Password" for="pwd"/>
+                                        <div>
+                                            <field name="pwd" placeholder="Example: apipassword"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="traccar_instance_tree" model="ir.ui.view">
+        <field name="name">traccar.configure.tree</field>
+        <field name="model">traccar.configure</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Connection Instances">
+                <field name="name"/>
+                <field name="user"/>
+                <field name="active"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="traccar_instance_search" model="ir.ui.view">
+        <field name="name">traccar.configure.search</field>
+        <field name="model">traccar.configure</field>
+        <field name="arch" type="xml">
+            <search string="Connections">
+                <field name="connection_status"/>
+                <filter string="Inactive Connection" name="inactive" domain="[('active','=',False)]" help="Inactive Connection"/>
+                <filter string="Successful" name="success" domain="[('connection_status','=',True)]" help="Successful Connection"/>
+                <filter string="Error" name="error" domain="[('connection_status','=',False)]" help="Error in Connection"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

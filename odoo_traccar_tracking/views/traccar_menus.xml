@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <menuitem name="Traccar" parent="fleet.fleet_vehicles" id="fleet_vehicle_traccar_menu" groups="fleet.fleet_group_user"/>
+        <menuitem name="Traccar Vehicles" action="odoo_traccar_tracking.traccar_fleet_vehicle_action" parent="fleet_vehicle_traccar_menu" id="traccar_fleet_vehicle_menu" groups="fleet.fleet_group_user"/>
+        <menuitem name="Trip Details" action="odoo_traccar_tracking.trip_details_action" parent="fleet_vehicle_traccar_menu" id="fleet_vehicle_trip_details_menu" groups="fleet.fleet_group_user"/>
+        <menuitem name="Driver Locations" action="odoo_traccar_tracking.traccar_driver_status_action" parent="fleet_vehicle_traccar_menu" id="fleet_vehicle_locations_details_menu" groups="fleet.fleet_group_user"/>
+    <menuitem id="traccar_configuration_menu" parent="fleet.fleet_configuration" action="odoo_traccar_tracking.traccar_instance_tree_action" sequence="1"/>
+</odoo>

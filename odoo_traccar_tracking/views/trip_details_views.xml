@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <record id="trip_details_form" model="ir.ui.view">
+        <field name="name">trip.details.form</field>
+        <field name="model">trip.details</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Trip Details" create="0" edit="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. TRIP0001"/>
+                        </h1>
+                        <label for="vehicle_id"/>
+                        <h2>
+                            <field name="vehicle_id" class="oe_inline"/>
+                        </h2>
+                        <label for="driver_id"/>
+                        <h2>
+                            <field name="driver_id" class="oe_inline"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <group string="Latitude &amp; Longitude">
+                                <group string="Source">
+                                    <field name="source_long" string="Longitude" readonly="1"/>
+                                    <field name="source_lat" string="Latitude" readonly="1"/>
+                                </group>
+                                <group string="Destination">
+                                    <field name="destination_long" string="Longitude" readonly="1"/>
+                                    <field name="destination_lat" string="Latitude" readonly="1"/>
+                                </group>
+                                <group string="Other Details">
+                                    <label for="total_distance"/>
+                                    <div class="o_row">
+                                        <field name="total_distance"/>
+                                        <field name="unit"/>
+                                    </div>
+                                    <field name="value" string="Speed"/>
+                                </group>
+                            </group>
+                            <group string="Traccar Details">
+                                <group string="Date">
+                                    <field name="trip_device_date" string="Trip Device"/>
+                                    <field name="trip_date" string="Trip"/>
+                                </group>
+                                <group string="Device Status">
+                                    <field name="battery_level" string="Battery "/>
+                                    <field name="accuracy" string="Accuracy"/>
+                                </group>
+                                <group string="Traccar Trip">
+                                    <field name="travel_id"/>
+                                    <field name="traccer_device_id"/>
+                                    <field name="device_id"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                          <div id="traccarMap" route='true' style="width:100%;height:500px;"></div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="trip_details_tree" model="ir.ui.view">
+        <field name="name">trip.details.tree</field>
+        <field name="model">trip.details</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Trip Details">
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="driver_id" />
+                <field name="value"/>
+                <field name="trip_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="trip_details_search" model="ir.ui.view">
+        <field name="name">trip.details.search</field>
+        <field name="model">trip.details</field>
+        <field name="arch" type="xml">
+            <search string="Trip Details">
+                <field name="vehicle_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Vehicle" name="group_by_vehicle" context="{'group_by':'vehicle_id'}"/>
+                    <filter string="Driver" name="group_by_driver" context="{'group_by':'driver_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>
