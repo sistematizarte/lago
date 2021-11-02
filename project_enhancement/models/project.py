@@ -4,6 +4,7 @@ from odoo import api, fields, models, _
 class Project(models.Model):
     _inherit = 'project.project'
 
+    flota_unit = fields.Many2one('fleet.vehicle', string='vehicle')
     total_initial_planned_hours = fields.Float(compute='_compute_project_information', string='Initial Planned Hours')
     total_invested_hours = fields.Float(compute='_compute_project_information', string='Invested Hours')
     total_initial_planned_hours_cost = fields.Float(compute='_compute_project_information', string='Initial Planned Hours Cost')
@@ -13,6 +14,8 @@ class Project(models.Model):
     total_consumed_material_cost = fields.Float(compute='_compute_project_information', string='Total Consumed Material Cost(actual)')
     project_progress = fields.Selection(string='Status', selection=[('new', 'New'), ('in_progress', 'In Progress'), ('done', 'Done'), ('hold', 'Hold')])
     currency_id = fields.Many2one('res.currency', compute='_compute_project_information', string='Currency')
+   
+
     
     @api.depends('task_count')
     def _compute_project_information(self):

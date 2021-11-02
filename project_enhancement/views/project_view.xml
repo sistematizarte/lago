@@ -25,6 +25,12 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
+                <!--codigo Whilly--> 
+                <xpath expr="//field[@name='name']" position="after">
+                    <br/>
+                    <field name="flota_unit" placeholder="Flota Asignada:"/>
+                </xpath>
+                <!-- ***** --> 
                 <xpath expr="//notebook" position="inside">
                     <page name='project_info' string='Project Information'>
                         <group>
@@ -61,6 +67,11 @@
             <field name="model">project.project</field>
             <field name="inherit_id" ref="project.view_project"/>
             <field name="arch" type="xml">
+                 <!--codigo Whilly-->                 
+                <xpath expr="//field[@name='partner_id']" position="after">
+                     <field name="flota_unit"/>
+                </xpath>
+                <!-- *** --> 
                 <xpath expr="//field[@name='label_tasks']" position="after">
                     <field name="total_initial_planned_hours" />
                     <field name="total_invested_hours" />
@@ -85,5 +96,15 @@
                 </xpath>
             </field>
         </record>
-
+                <!--codigo Whilly--> 
+        <record id="view_view_vehicle_" model="ir.ui.view">
+            <field name="name">project_view_vehicle</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.project_project_view_form_simplified_footer"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="flota_unit" placeholder="Flota Asignada:" style="width:150px"/>
+                </xpath>
+            </field>
+        </record>
 </odoo>
