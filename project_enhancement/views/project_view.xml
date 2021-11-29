@@ -103,8 +103,18 @@
             <field name="inherit_id" ref="project.project_project_view_form_simplified_footer"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="flota_unit" placeholder="Flota Asignada:" style="width:150px"/>
+                    <field name="flota_unit" placeholder="Flota Asignada:" style="width:200px"/>
                 </xpath>
             </field>
         </record>
+       <!-- <record id="view_view_task" model="ir.ui.view">
+            <field name="name">project_view_task</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="before">
+                    <field name="total_invested_hours "/>
+                </xpath>
+            </field>
+        </record>-->
 </odoo>

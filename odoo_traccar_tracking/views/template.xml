@@ -5,7 +5,8 @@
 <odoo>
 
     <template id="traccar_map_assets" inherit_id="web.assets_backend" name="Traccar map Assets">
-        <xpath expr="script[last()]" position="after">
+       
+         <xpath expr="script[last()]" position="after">
             <t t-set="provider" t-value="request.env['traccar.configure'].sudo().current_map_provider()" />
             <t t-if="provider=='googlemap'">
                 <!-- Load Google map api -->
@@ -25,6 +26,6 @@
                 <link rel="stylesheet" href="/odoo_traccar_tracking/static/src/lib/ol.css" type="text/css" ></link>
                 <script type="text/javascript" src="/odoo_traccar_tracking/static/src/lib/ol.js" ></script>
             </t>
-        </xpath>
+        </xpath> 
     </template>
 </odoo>

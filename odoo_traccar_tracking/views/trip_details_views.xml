@@ -28,12 +28,12 @@
                         <group>
                             <group string="Latitude &amp; Longitude">
                                 <group string="Source">
-                                    <field name="source_long" string="Longitude" readonly="1"/>
-                                    <field name="source_lat" string="Latitude" readonly="1"/>
+                                    <field name="source_long" string="Longitude"/>
+                                    <field name="source_lat" string="Latitude" />
                                 </group>
                                 <group string="Destination">
-                                    <field name="destination_long" string="Longitude" readonly="1"/>
-                                    <field name="destination_lat" string="Latitude" readonly="1"/>
+                                    <field name="destination_long" string="Longitude" />
+                                    <field name="destination_lat" string="Latitude" />
                                 </group>
                                 <group string="Other Details">
                                     <label for="total_distance"/>

@@ -14,9 +14,7 @@ class Project(models.Model):
     total_consumed_material_cost = fields.Float(compute='_compute_project_information', string='Total Consumed Material Cost(actual)')
     project_progress = fields.Selection(string='Status', selection=[('new', 'New'), ('in_progress', 'In Progress'), ('done', 'Done'), ('hold', 'Hold')])
     currency_id = fields.Many2one('res.currency', compute='_compute_project_information', string='Currency')
-   
 
-    
     @api.depends('task_count')
     def _compute_project_information(self):
         for project in self:
